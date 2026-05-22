@@ -1,16 +1,39 @@
 const express = require('express');
+
 const router = express.Router();
 
-const studentController = require('../controllers/studentController');
+const studentController =
+require('../controllers/studentController');
 
-router.get('/', studentController.getAllStudents);
 
-router.get('/add', studentController.showAddForm);
-router.post('/add', studentController.addStudent);
+// HOME
 
-router.get('/edit/:id', studentController.showEditForm);
-router.put('/edit/:id', studentController.updateStudent);
+router.get('/',
+studentController.getAllStudents);
 
-router.delete('/delete/:id', studentController.deleteStudent);
+
+// ADD
+
+router.get('/add',
+studentController.showAddForm);
+
+router.post('/add',
+studentController.addStudent);
+
+
+// EDIT
+
+router.get('/edit/:id',
+studentController.showEditForm);
+
+router.put('/edit/:id',
+studentController.updateStudent);
+
+
+// DELETE
+
+router.delete('/delete/:id',
+studentController.deleteStudent);
+
 
 module.exports = router;
